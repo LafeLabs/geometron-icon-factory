@@ -1,4 +1,4 @@
-# [GEOMETRON ICON FACTORY](github.com/LafeLabs/geometron-icon-factory)
+# [GEOMETRON ICON FACTORY](https://github.com/LafeLabs/geometron-icon-factory)
 
 ![](qrcode.png)
 
@@ -16,7 +16,8 @@ USE ICONS TO BUILD APPS AND USE APPS TO BUILD ICONS!
  - [trash robot](https://trashrobot.net/)
  - [qrcode.html](qrcode.html)
 
- 
+# GEOMETRON HYPERCUBE
+
  ![hypercube.svg](hypercube.svg)
 
 ```
