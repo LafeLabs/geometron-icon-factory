@@ -12,9 +12,10 @@ USE ICONS TO BUILD APPS AND USE APPS TO BUILD ICONS!
 
  - [index.html](index.html)
  - [readme.html](readme.html)
- - [http://localhost/geometron-icon-factory/](http://localhost/geometron-icon-factory/)
- - [trash robot](https://trashrobot.net/)
+ - [http://localhost/geometron-icon-factory/readme.html](http://localhost/geometron-icon-factory/readme.html)
+ - [TRASH ROBOT LIVE ICON FACTORY](https://trashrobot.net/geometron-icon-factory/index.html)
  - [qrcode.html](qrcode.html)
+ - [replicator.txt url](https://raw.githubusercontent.com/LafeLabs/geometron-icon-factory/refs/heads/main/php/replicator.txt)
 
 # GEOMETRON HYPERCUBE
 
