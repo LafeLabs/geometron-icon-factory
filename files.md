@@ -2,6 +2,7 @@
 # HTML FILES
 
  - [branch.html](branch.html)
+ - [cardboard-sign.html](cardboard-sign.html)
  - [delete-images.html](delete-images.html)
  - [delete-markdown-files.html](delete-markdown-files.html)
  - [delete-php-files.html](delete-php-files.html)
@@ -28,6 +29,7 @@
  - [setup.html](setup.html)
  - [shape-stack.html](shape-stack.html)
  - [shapestacksymbols.html](shapestacksymbols.html)
+ - [sketch.html](sketch.html)
  - [style-editor.html](style-editor.html)
  - [symbol-feed.html](symbol-feed.html)
 
@@ -40,6 +42,7 @@
 
  - [geometron.js](geometron.js)
  - [lasercutfont.js](lasercutfont.js)
+ - [rainbow.js](rainbow.js)
  - [robotfont.js](robotfont.js)
  - [track-list.js](track-list.js)
  - [trashrobotfont.js](trashrobotfont.js)

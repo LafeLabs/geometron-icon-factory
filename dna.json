@@ -1,6 +1,7 @@
 {
     "html": [
         "branch.html",
+        "cardboard-sign.html",
         "delete-images.html",
         "delete-markdown-files.html",
         "delete-php-files.html",
@@ -27,6 +28,7 @@
         "setup.html",
         "shape-stack.html",
         "shapestacksymbols.html",
+        "sketch.html",
         "style-editor.html",
         "symbol-feed.html"
     ],
@@ -44,6 +46,7 @@
     "js": [
         "geometron.js",
         "lasercutfont.js",
+        "rainbow.js",
         "robotfont.js",
         "track-list.js",
         "trashrobotfont.js"

@@ -14,9 +14,6 @@
     <a href = "index.html" style = "font-size:3em">
         <img alt = "home" src = "iconsymbols/home.svg"/>
     </a>            
-    <a href = "symbolset.html" style = "font-size:3em">
-        <img alt = "set" src = "iconsymbols/chaos.svg"/>
-    </a>
 
 <table id = "toptable">
     <tr>
@@ -53,6 +50,12 @@
 </div>
 
 <script>
+
+deleteglyph = "0321,0220,0322,0350,0335,0304,0336,0336,0334,0335,0330,0332,0362,0203,0203,0203,0335,0203,0203,0335,0203,0203,0203,0334,0203,0203,0203,0335,0203,0203,0335,0203,0203,0203,0334,0203,0203,0203,0335,0203,0203,0335,0203,0203,0203,0334,0203,0203,0203,0335,0203,0203,0335,0203,0203,0203,0363,0320,0335,0335,0331,0332,0350,0335,0304,";
+
+shape0220 = "0314,0336,0313,0333,0331,0331,0337,0337,0332,0362,0203,0336,0336,0333,0350,0334,0345,0335,0330,0335,0335,0337,0337,0203,0336,0336,0335,0333,0334,0334,0345,0335,0330,0335,0335,0337,0337,0203,0335,0336,0336,0333,0334,0334,0345,0335,0330,0335,0335,0337,0337,0203,0335,0336,0336,0333,0334,0334,0345,0333,0364,0335,0335,0335,0304,0337,0330,0333,0336,0333,0314,0337,0313,";
+
+
 document.getElementById("tofile").value = "";
 document.getElementById("fromfile").value = "";
 
@@ -106,21 +109,34 @@ httpc4.onreadystatechange = function() {
                 newdiv.className = "filename";
                 newp.appendChild(newdiv);
                 
-                var delimg = document.createElement("IMG");
-                delimg.src = "iconsymbols/delete.svg";
-                delimg.className = "button";
-                newp.appendChild(delimg);
+                var delspan = document.createElement("SPAN");
+                var delcan = document.createElement("CANVAS");
+                delspan.appendChild(delcan);
+                newp.appendChild(delspan);
+                delcan.className = "button";
+                var newGVM = new GVM(delcan,100,100);
+                newGVM.x0 = 50;
+                newGVM.y0 = 50;
+                newGVM.unit = 40;
+//                newGVM.style.line1 = 10;
+                newGVM.importbytecode(hypercube);
+                newGVM.hypercube[0220] = shape0220;
+                newGVM.drawGlyph(deleteglyph);
+
                 newp.style.border = "solid";
-                delimg.onclick = function(){
-                    var thisimageurl = this.parentNode.getElementsByTagName("IMG")[0].src;
-                    var thisimagename = thisimageurl.split("symbolfeed/")[1];
+                delcan.onclick = function(){
+                    imagesrcurl = this.parentNode.parentNode.getElementsByTagName("IMG")[0].src;
+                    imageurlarray = imagesrcurl.split("/");
+                    filename = imageurlarray[imageurlarray.length-1];             
+            //        console.log(filename);
                     var httpc = new XMLHttpRequest();
-                    var url = "deletefile.php";         
+                    var url = "delete-file.php";         
                     httpc.open("POST", url, true);
                     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-                    httpc.send("filename=symbolfeed/" + thisimagename);//send text to deletefile.php
-                    document.getElementById("symbolscroll").removeChild(this.parentNode);
+                    httpc.send("filename=" + filename);//send text to deletefile.php
+                    document.getElementById("symbolscroll").removeChild(this.parentNode.parentNode);
                     
+
                 }
     
     
