@@ -32,6 +32,7 @@
  - [sketch.html](sketch.html)
  - [style-editor.html](style-editor.html)
  - [symbol-feed.html](symbol-feed.html)
+ - [symbol-set.html](symbol-set.html)
 
 # CSS FILES
 
