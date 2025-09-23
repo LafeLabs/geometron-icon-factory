@@ -26,6 +26,8 @@ this program generates the file dna.txt which lists the files to replicate
     $cssfiles = [];
     $mdfiles = [];
     $textfiles = [];
+
+    $svgfiles = [];
     
     foreach($files as $value){
         if( substr($value,-5) == ".html"){
@@ -37,6 +39,10 @@ this program generates the file dna.txt which lists the files to replicate
         if(substr($value,-4) == ".css"){
             array_push($cssfiles,$value);
         }        
+        if(substr($value,-4) == ".svg"){
+            array_push($svgfiles,$value);
+        }        
+
         if(substr($value,-3) == ".js"){
             array_push($jsfiles,$value);
         }        
@@ -54,6 +60,7 @@ this program generates the file dna.txt which lists the files to replicate
     $dna->html = $htmlfiles;
     $dna->json = $jsonfiles;
     $dna->css = $cssfiles;
+    $dna->svg = $svgfiles;
     $dna->js = $jsfiles;
     $dna->md = $mdfiles;
     $dna->text = $textfiles;

@@ -19,6 +19,10 @@ foreach($dna->html as $value){
 foreach($dna->css as $value){
     copy($baseurl.$value,$value);
 }
+foreach($dna->svg as $value){
+    copy($baseurl.$value,$value);
+}
+
 foreach($dna->js as $value){
     copy($baseurl.$value,$value);
 }
