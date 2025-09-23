@@ -52,10 +52,7 @@
         <img alt = "hypercube" src = "hypercube.svg"/> 
     </a>        
     <a href = "font.html">
-        <img alt="font" src = "font.svg"/> 
-    </a>        
-    <a href = "symbol-set.html">
-        <img alt="edit" src = "chaos.svg"/> 
+        <img alt="font" src = "font.svg"/>
     </a>        
     <a href = "edit-web-files.html">
         <img alt="edit" src = "edit.svg"/> 
@@ -73,7 +70,7 @@
     <table id = "spellinputtable">
         <tr>
             <td>
-                <img alt="mode" id = "modeindicator" class = "button" src = "iconsymbols/cursor.svg"/>
+                <img alt="mode" id = "modeindicator" class = "button" src = "cursor.svg"/>
             </td>
             <td>
                 <input id = "actioninput"/>
@@ -369,13 +366,13 @@ function modeswitch(){
     mode++;
     mode = mode%3;
     if(mode == 0){
-        document.getElementById("modeindicator").src = "iconsymbols/cursor.svg";
+        document.getElementById("modeindicator").src = "cursor.svg";
     }
     if(mode == 1){
-        document.getElementById("modeindicator").src = "iconsymbols/abcfont.svg";
+        document.getElementById("modeindicator").src = "geometron-text.svg";
     }
     if(mode == 2){
-        document.getElementById("modeindicator").src = "iconsymbols/abcstack.svg";
+        document.getElementById("modeindicator").src = "font.svg";
     }
     document.getElementById("actioninput").select();   
 }
