@@ -17,10 +17,6 @@ foreach($dna->css as $value){
 foreach($dna->js as $value){
     copy($baseurl.$value,$value);
 }
-foreach($dna->svg as $value){
-    copy($baseurl.$value,$value);
-}
-
 foreach($dna->json as $value){
     copy($baseurl.$value,$value);
 }
