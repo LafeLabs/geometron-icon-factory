@@ -20,8 +20,8 @@
     
     <!--Stop Google:-->
     <META NAME="robots" CONTENT="noindex,nofollow">
-
     <script src="geometron.js"></script>
+    <script src = "icons.js"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
     
 </head>
@@ -36,20 +36,19 @@
 <div id = "spellbox">
     <canvas id = "spellcanvas"></canvas>
 </div>
-
-<img alt = "mode" id = "modeindicator" src = "iconsymbols/cursor.svg"/>
+<span>
+    <canvas id = "modeindicator"></canvas>
+</span>
 <input id = "actioninput"/>
 <input id = "spellinput"/>
 <input id = "addressinput"/>
 
-
-
 <div id = "linkbox">
     <a href = "index.html">
-        <img alt = "home" src = "home.svg" style = "width:50px"/>
+        <canvas id = "homeicon"></canvas>
     </a>    
     <a href = "shape-stack.html">
-        <img alt = "hypercube" src = "hypercube.svg" style = "width:50px"/>
+        <canvas id = "hypercubeicon"></canvas>
     </a>    
 </div>
 
@@ -79,7 +78,31 @@ spellGVM.y0 = 40;
 spellGVM.unit = 36;
 
 gvmArray = [];
+square = 50;
+var homeGVM = new GVM(document.getElementById("homeicon"),square,square);
+homeGVM.importbytecode(hypercube);
+homeGVM.hypercube[0220] = outline_icon;
+homeGVM.style.line0= 0.5;
+homeGVM.style.line1= 5;
+homeGVM.unit = 23;
+homeGVM.drawGlyph(home_icon);
 
+square = 50;
+var hypercubeGVM = new GVM(document.getElementById("hypercubeicon"),square,square);
+hypercubeGVM.importbytecode(hypercube);
+hypercubeGVM.hypercube[0220] = outline_icon;
+hypercubeGVM.style.line0= 0.5;
+hypercubeGVM.style.line1= 5;
+hypercubeGVM.unit = 23;
+hypercubeGVM.drawGlyph(hypercube_icon);
+
+var modeGVM = new GVM(document.getElementById("modeindicator"),50,50);
+modeGVM.importbytecode(hypercube);
+modeGVM.hypercube[0220] = outline_icon;
+modeGVM.style.line0= 0.5;
+modeGVM.style.line1= 3;
+modeGVM.unit = 24;
+modeGVM.drawGlyph(cursor_icon);
 
 
 var httpc = new XMLHttpRequest();
@@ -231,18 +254,19 @@ document.getElementById("actioninput").onkeydown = function(a) {
     savejson();
 }
 
+
 function modeswitch(){
     mode++;
     mode = mode%3;
     if(mode == 0){
-        document.getElementById("modeindicator").src = "iconsymbols/cursor.svg";
+        modeGVM.drawGlyph(cursor_icon);
         gvmArray[feedindex].importbytecode(symbolkeyboard);
     }
     if(mode == 1){
-        document.getElementById("modeindicator").src = "iconsymbols/abcfont.svg";
+        modeGVM.drawGlyph(abcgeometron_icon);
     }
    if(mode == 2){
-        document.getElementById("modeindicator").src = "iconsymbols/abcstack.svg";
+        modeGVM.drawGlyph(abc_icon);
     }
 }
 

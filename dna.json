@@ -105,10 +105,12 @@
         "symbol1758591029.svg",
         "symbol1758591127.svg",
         "symbol1758670758.svg",
+        "symbol1764450884.svg",
         "trash-can-icon.svg"
     ],
     "js": [
         "geometron.js",
+        "icons.js",
         "lasercutfont.js",
         "rainbow.js",
         "robotfont.js",

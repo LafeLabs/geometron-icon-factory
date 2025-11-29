@@ -43,6 +43,7 @@
 # JAVASCRIPT FILES
 
  - [geometron.js](geometron.js)
+ - [icons.js](icons.js)
  - [lasercutfont.js](lasercutfont.js)
  - [rainbow.js](rainbow.js)
  - [robotfont.js](robotfont.js)

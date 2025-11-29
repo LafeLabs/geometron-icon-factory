@@ -5,6 +5,7 @@
     <!--Stop Google:-->
     <META NAME="robots" CONTENT="noindex,nofollow">
     <script src="geometron.js"></script>
+    <script src="icons.js"></script>
 <script>    
 </script>
 </head>
@@ -12,7 +13,7 @@
 
 <div id = "margin">
     <a href = "index.html" style = "font-size:3em">
-        <img alt = "home" src = "home.svg"/>
+        <canvas id = "homeicon"></canvas>
     </a>            
 
 <table id = "toptable">
@@ -54,6 +55,15 @@
 deleteglyph = "0321,0220,0322,0350,0335,0304,0336,0336,0334,0335,0330,0332,0362,0203,0203,0203,0335,0203,0203,0335,0203,0203,0203,0334,0203,0203,0203,0335,0203,0203,0335,0203,0203,0203,0334,0203,0203,0203,0335,0203,0203,0335,0203,0203,0203,0334,0203,0203,0203,0335,0203,0203,0335,0203,0203,0203,0363,0320,0335,0335,0331,0332,0350,0335,0304,";
 
 shape0220 = "0314,0336,0313,0333,0331,0331,0337,0337,0332,0362,0203,0336,0336,0333,0350,0334,0345,0335,0330,0335,0335,0337,0337,0203,0336,0336,0335,0333,0334,0334,0345,0335,0330,0335,0335,0337,0337,0203,0335,0336,0336,0333,0334,0334,0345,0335,0330,0335,0335,0337,0337,0203,0335,0336,0336,0333,0334,0334,0345,0333,0364,0335,0335,0335,0304,0337,0330,0333,0336,0333,0314,0337,0313,";
+
+square = 100;
+var homeGVM = new GVM(document.getElementById("homeicon"),square,square);
+homeGVM.importbytecode(hypercube);
+homeGVM.hypercube[0220] = outline_icon;
+homeGVM.style.line0= 0.5;
+homeGVM.style.line1= 5;
+homeGVM.unit = 46;
+homeGVM.drawGlyph(home_icon);
 
 
 document.getElementById("tofile").value = "";

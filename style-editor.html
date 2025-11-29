@@ -5,11 +5,14 @@
     <!--Stop Google:-->
     <META NAME="robots" CONTENT="noindex,nofollow">
     <script src="geometron.js"></script>
+    <script src="icons.js"></script>
+
     <title>Style Editor</title>
+    
 </head>
 <body>    
     <a href = "index.html">
-        <img style = "width:36px" alt = "home" src = "home.svg"/>
+        <canvas id = "homeicon"></canvas>
     </a>
     <table id = "styletable">
         <tr>
@@ -82,6 +85,15 @@
     <textarea id = "textio"></textarea>
     <canvas id = "outputcanvas"></canvas>
 <script>    
+square = 100;
+var homeGVM = new GVM(document.getElementById("homeicon"),square,square);
+homeGVM.importbytecode(hypercube);
+homeGVM.hypercube[0220] = outline_icon;
+homeGVM.style.line0= 0.5;
+homeGVM.style.line1= 5;
+homeGVM.unit = 46;
+homeGVM.drawGlyph(home_icon);
+
 
 inputs = document.getElementById("styletable").getElementsByTagName("input");
 

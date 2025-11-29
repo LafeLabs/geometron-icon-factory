@@ -22,41 +22,50 @@
     <META NAME="robots" CONTENT="noindex,nofollow">
 <!--geometron javascript library-->
     <script src="geometron.js"></script>
-
+    <script src = "icons.js"></script>
 </head>
 <body>
 <div id = "header">
-    <img alt ="SAVE" id = "savebutton" class = "button" src = "save.svg"/>
+    <span>
+        <canvas id = "savebutton" class ="button"></canvas>
+    </span>
     <a href = "readme.html">
-        <img alt="readme" src = "scroll.svg"/> 
+        <canvas id = "scrollicon" class ="button"></canvas>
     </a>        
     <a href = "symbol-feed.html">
-        <img alt ="symbolfeed" src = "symbol-feed.svg"/> 
+        <canvas id = "feedicon" class ="button"></canvas>
     </a>        
     <a href = "style-editor.html">
-        <img alt= "style" src = "style.svg"/> 
+        <canvas id = "styleicon" class ="button"></canvas>
     </a>        
     <a href = "setup.html">
-        <img alt = "setup" src = "setup.svg"/> 
+        <canvas id = "setupicon" class ="button"></canvas>
     </a>        
+    
     <a href = "shape-stack.html">
-        <img alt="shapes" src = "shapes.svg"/> 
+        <canvas id = "shapesicon" class ="button"></canvas>
     </a>        
+
     <a href = "keyboard.html">
-        <img alt = "keyboard" src = "keyboard.svg"/> 
+        <canvas id = "keyboardicon" class ="button"></canvas>
     </a>        
+
     <a href = "json.html">
-        <img alt = "json" src = "json.svg"/> 
+        <canvas id = "jsonicon" class ="button"></canvas>
     </a>        
+
     <a href = "hypercube.html">
-        <img alt = "hypercube" src = "hypercube.svg"/> 
+        <canvas id = "hypercubeicon" class ="button"></canvas>
     </a>        
+
     <a href = "font.html">
-        <img alt="font" src = "font.svg"/>
+        <canvas id = "fonticon" class ="button"></canvas>
     </a>        
+
     <a href = "edit-web-files.html">
-        <img alt="edit" src = "edit.svg"/> 
+        <canvas id = "editicon" class ="button"></canvas>
     </a>        
+    
 </div>
 
 
@@ -70,7 +79,9 @@
     <table id = "spellinputtable">
         <tr>
             <td>
-                <img alt="mode" id = "modeindicator" class = "button" src = "cursor.svg"/>
+<!--
+                <img alt="mode" id = "modeindicator" class = "button" src = "cursor.svg"/>-->
+                <canvas id = "modeindicator" class = button></canvas>
             </td>
             <td>
                 <input id = "actioninput"/>
@@ -85,11 +96,126 @@
     </div>
 </div>
 <div id = "controlbox">
-    <a href = "controls.html"><img alt ="controls" style = "width:36px" src = "iconsymbols/edit.svg"/></a>
+    <a href = "controls.html">
+        <canvas id = "editicon2" class ="button"></canvas>
+    </a>
     <table id = "controltable">
     </table>
 </div>
 <script>
+
+square = 36;
+
+savecanvas = document.getElementById("savebutton");
+var saveGVM = new GVM(savecanvas,square,square);
+saveGVM.importbytecode(hypercube);
+saveGVM.hypercube[0220] = outline_icon;
+saveGVM.style.line0= 2;
+saveGVM.style.line1= 1.5;
+saveGVM.unit = 16;
+saveGVM.drawGlyph(save_icon);
+
+scrollcanvas = document.getElementById("scrollicon");
+var scrollGVM = new GVM(scrollcanvas,square,square);
+scrollGVM.importbytecode(hypercube);
+scrollGVM.hypercube[0220] = outline_icon;
+scrollGVM.style.line0= 2;
+scrollGVM.style.line1= 1.5;
+scrollGVM.unit = 16;
+scrollGVM.drawGlyph(scroll_icon);
+
+
+feedcanvas = document.getElementById("feedicon");
+var feedGVM = new GVM(feedcanvas,square,square);
+feedGVM.importbytecode(hypercube);
+feedGVM.hypercube[0220] = outline_icon;
+feedGVM.style.line0= 0.5;
+feedGVM.style.line1= 0.5;
+feedGVM.unit = 16;
+feedGVM.drawGlyph(geometronfeed_icon);
+
+stylecanvas = document.getElementById("styleicon");
+var styleGVM = new GVM(stylecanvas,square,square);
+styleGVM.importbytecode(hypercube);
+styleGVM.hypercube[0220] = outline_icon;
+styleGVM.style.line0= 0.5;
+styleGVM.style.line1= 0.5;
+styleGVM.unit = 16;
+styleGVM.drawGlyph(style_icon);
+
+var setupGVM = new GVM(document.getElementById("setupicon"),square,square);
+setupGVM.importbytecode(hypercube);
+setupGVM.hypercube[0220] = outline_icon;
+setupGVM.style.line0= 0.5;
+setupGVM.style.line1= 0.5;
+setupGVM.unit = 16;
+setupGVM.drawGlyph(setup_icon);
+
+var shapesGVM = new GVM(document.getElementById("shapesicon"),square,square);
+shapesGVM.importbytecode(hypercube);
+shapesGVM.hypercube[0220] = outline_icon;
+shapesGVM.style.line0= 0.5;
+shapesGVM.style.line1= 0.5;
+shapesGVM.unit = 16;
+shapesGVM.drawGlyph(shapes_icon);
+
+var keyboardGVM = new GVM(document.getElementById("keyboardicon"),square,square);
+keyboardGVM.importbytecode(hypercube);
+keyboardGVM.hypercube[0220] = outline_icon;
+keyboardGVM.style.line0= 0.5;
+keyboardGVM.style.line1= 0.5;
+keyboardGVM.unit = 16;
+keyboardGVM.drawGlyph(keyboard_icon);
+
+var jsonGVM = new GVM(document.getElementById("jsonicon"),square,square);
+jsonGVM.importbytecode(hypercube);
+jsonGVM.hypercube[0220] = outline_icon;
+jsonGVM.style.line0= 0.5;
+jsonGVM.style.line1= 0.5;
+jsonGVM.unit = 16;
+jsonGVM.drawGlyph(json_icon);
+
+var hypercubeGVM = new GVM(document.getElementById("hypercubeicon"),square,square);
+hypercubeGVM.importbytecode(hypercube);
+hypercubeGVM.hypercube[0220] = outline_icon;
+hypercubeGVM.style.line0= 0.5;
+hypercubeGVM.style.line1= 0.5;
+hypercubeGVM.unit = 16;
+hypercubeGVM.drawGlyph(hypercube_icon);
+
+
+var fontGVM = new GVM(document.getElementById("fonticon"),square,square);
+fontGVM.importbytecode(hypercube);
+fontGVM.hypercube[0220] = outline_icon;
+fontGVM.style.line0= 0.5;
+fontGVM.style.line1= 0.5;
+fontGVM.unit = 16;
+fontGVM.drawGlyph(abc_icon);
+
+
+var editGVM = new GVM(document.getElementById("editicon"),square,square);
+editGVM.importbytecode(hypercube);
+editGVM.hypercube[0220] = outline_icon;
+editGVM.style.line0= 0.5;
+editGVM.style.line1= 0.5;
+editGVM.unit = 16;
+editGVM.drawGlyph(edit_icon);
+
+var editGVM2 = new GVM(document.getElementById("editicon2"),square,square);
+editGVM2.importbytecode(hypercube);
+editGVM2.hypercube[0220] = outline_icon;
+editGVM2.style.line0= 0.5;
+editGVM2.style.line1= 0.5;
+editGVM2.unit = 16;
+editGVM2.drawGlyph(edit_icon);
+
+var modeGVM = new GVM(document.getElementById("modeindicator"),square,square);
+modeGVM.importbytecode(hypercube);
+modeGVM.hypercube[0220] = outline_icon;
+modeGVM.style.line0= 0.5;
+modeGVM.style.line1= 3;
+modeGVM.unit = 16;
+modeGVM.drawGlyph(cursor_icon);
 
 controls  = [
     "020,010,021,011,0201,0217,",
@@ -366,13 +492,13 @@ function modeswitch(){
     mode++;
     mode = mode%3;
     if(mode == 0){
-        document.getElementById("modeindicator").src = "cursor.svg";
+        modeGVM.drawGlyph(cursor_icon);
     }
     if(mode == 1){
-        document.getElementById("modeindicator").src = "geometron-text.svg";
+        modeGVM.drawGlyph(abcgeometron_icon);
     }
     if(mode == 2){
-        document.getElementById("modeindicator").src = "font.svg";
+        modeGVM.drawGlyph(abc_icon);
     }
     document.getElementById("actioninput").select();   
 }
